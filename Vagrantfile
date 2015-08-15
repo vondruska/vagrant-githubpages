@@ -9,7 +9,7 @@ Run 'vagrant ssh' then 'screen -r jekyll' to gain access to runn Jekyll process.
 
   config.vm.provision "shell", path: "provision.sh"
 
-  config.vm.provision "shell", inline: "screen -A -m -d -S jekyll jekyll serve -s /home/vagrant/jekyll --force_polling &", run: "always", privileged: false
+  config.vm.provision "shell", inline: "screen -A -m -d -S jekyll jekyll serve -s /home/vagrant/jekyll --force_polling --drafts --future &", run: "always", privileged: false
 
   config.vm.synced_folder "src/", "/home/vagrant/jekyll"
 end
